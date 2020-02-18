@@ -69,7 +69,6 @@ public class WrapperTest {
         User u4 = userMapper.selectById(4);
         Assert.assertNull(u4.getEmail());
 
-
     }
 
     @Test

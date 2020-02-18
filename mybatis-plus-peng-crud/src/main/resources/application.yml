@@ -10,13 +10,14 @@ spring:
   # 启用H2 Web Console http://localhost:8080/h2-console
   h2:
     console:
-      enabled: true
-      settings:
-        web-allow-others: true
+      enabled: on
       path: /h2
+      settings:
+        web-allow-others: on
+
 
 # Logger Config
 logging:
   level:
-    com.baomidou.mybatisplus.samples: debug
+    com.peng.mybatisplus: debug
 # MyBatis-Plus 配置该演示无

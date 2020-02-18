@@ -27,6 +27,7 @@ public class IdGeneratorTest {
         user.setName("靓仔");
         user.setAge(18);
         userMapper.insert(user);
+        System.out.println(user.getId());
         Assert.assertEquals(Long.valueOf(1L), user.getId());
     }
 }
