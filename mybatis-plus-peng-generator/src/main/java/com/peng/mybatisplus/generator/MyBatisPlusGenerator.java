@@ -73,14 +73,15 @@ public class MyBatisPlusGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        //父包模块名
+        //父包名,如果为空，将下面子包名必须写全部，否则就只需写子包名
+        pc.setParent("com.peng.mybatisplus");   //最终是： com.peng.mybatisplus
+        // 父包模块名
         pc.setModuleName(scanner("模块名")); //crud
-        pc.setParent("com.peng.mybatisplus");   //最终是： com.peng.mybatisplus.crud
-        // pc.setEntity(null);
-        // pc.setMapper(null);
+        pc.setEntity("model");
+        pc.setMapper("mapper");
         // pc.setService(null);
         // pc.setServiceImpl(null);
-        // pc.setXml(null);
+        pc.setXml("xml");
         mpg.setPackageInfo(pc);
 
         // 数据源配置
@@ -104,7 +105,7 @@ public class MyBatisPlusGenerator {
         // 驼峰转连字符
         strategy.setControllerMappingHyphenStyle(true);
         // 是否启动Lombok配置
-        strategy.setEntityLombokModel(true);
+        strategy.setEntityLombokModel(false);
         // 自定义继承的Entity类全称，带包名
         //strategy.setSuperEntityClass("com.peng.mybatisplus.samples.generator.common.BaseEntity");
         // 自定义基础的Entity类，公共字段
